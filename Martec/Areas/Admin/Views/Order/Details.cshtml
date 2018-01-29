@@ -1,0 +1,51 @@
+﻿@model Martec.Domain.Models.ItemModel[]
+
+@{
+    ViewBag.Title = "Details";
+}
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>@TempData["message"]
+    </div>
+}
+@if (Model != null)
+{
+    <h2>Details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Size</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Sub Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                decimal S = 0;
+            }
+
+            @foreach (var item in Model)
+            {
+                S = S + item.Quantity * @item.UnitPrice;
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Size</td>
+                    <td>@item.Quantity </td>
+                    <td>@item.UnitPrice</td>
+
+                    <td>@(item.Quantity * @item.UnitPrice)</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="4" style="background :border-box">Sum</td>
+                <td>@S</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+ }
+

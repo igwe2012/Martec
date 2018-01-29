@@ -1,0 +1,44 @@
+﻿@model ProductViewModel
+
+
+@{
+    ViewBag.Title = "List";
+}
+<h4>Products</h4>
+
+<div class="container-fluid">
+    @if (TempData["Notification"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible w3-animate-opacity" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>@TempData["Notification"]
+        </div>
+    }
+
+   @if (TempData["Message"] != null)
+   {
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>@TempData["Message"]
+    </div>
+   }
+    <div class="row">
+       
+            
+
+            <div class="row">
+                @foreach (var item in Model.Product)
+                {
+                    <div class="col-md-4">
+                        <h6>@item.ProductName</h6>
+                        <img src="@Url.Content(@item.Image)" width="250" style="height:250px">
+                        <div class="caption">
+                            <h6>&#8358; @item.UnitPrice</h6>
+                        </div>
+                        <p>
+                            <a href="@Url.Action("Add","Cart",new {Id =item.ProductId })" class="btn btn-primary" role="button">Add To Cart</a>
+                        </p>
+                    </div>
+                }
+            </div>
+      
+    </div>
+</div>

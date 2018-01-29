@@ -1,0 +1,13 @@
+﻿@model List<ItemModel>
+@{
+    ViewBag.Title = "Button";
+}
+@if (Model != null && Model.Any())
+{
+    var count = Model.Count;
+    <li>
+        <a href="@Url.Action("ShowCart","Cart")"><i class="fa fa-shopping-cart"></i> Carts<span class="w3-badge w3-red">@count</span> </a>
+    </li>
+
+   }       
+

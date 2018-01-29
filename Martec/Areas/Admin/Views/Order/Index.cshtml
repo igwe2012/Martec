@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Martec.Domain.Models.OrderModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>@TempData["Message"]
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item.OrderId)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.CreatedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new {Id = item.OrderId }) |
+        </td>
+        <td>
+            @Html.ActionLink("DeliveryAddress", "DeliveryAddress", new {Id = item.OrderId }) |
+        </td>
+    </tr>
+}
+
+</table>

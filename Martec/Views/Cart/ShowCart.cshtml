@@ -1,0 +1,89 @@
+﻿@model List<ItemModel>
+@{
+    ViewBag.Title = "ShowCart";
+}
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>@TempData["Message"]
+    </div>
+}
+
+<h5><i class="fa fa-shopping-cart"></i>Cart</h5>
+<hr />
+@{var model = new List<ItemModel>();}
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Sub Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                decimal S = 0;
+            }
+
+            @foreach (var item in Model)
+                {
+                    S = S + item.Quantity * @item.Product.UnitPrice;
+                <tr>
+                    <td>@item.Product.ProductName</td>
+                    <td>
+
+                        <form action="/cart/update" method="post">
+                            <input type="hidden" name="ProductId" value="@item.Product.ProductId" />
+                            <input name="Quantity" type="number" value="@item.Quantity" />
+                            <input type="submit" value="Update" />
+                        </form>
+                    </td>
+                    <td>@item.Product.UnitPrice</td>
+
+                    <td>@(item.Quantity * @item.Product.UnitPrice)</td>
+                    <td><a href="@Url.Action("Remove", "Cart", new { Id = item.ProductId })" class="btn btn-primary" role="button">Remove</a></td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3">Sum</td>
+                <td>@S</td>
+            </tr>
+            <tr>
+                <td>
+                    <form action="@Url.Action("place","order")" method="post">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-first-order"></i>Place Order
+                        </button>
+                    </form>
+
+                    @*<form action="/Order/Place" method="post">
+
+                        <input type="submit" value="Place Order" class="bg-primary" />
+                    </form>*@
+                </td>
+                <td><a href="@Session["Url"]" class="btn btn-default" role="button">Continue Shopping</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+                }
+
+                else
+                {
+                    <h7> You have no item in the Cart</h7>
+                }
+<hr/>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />

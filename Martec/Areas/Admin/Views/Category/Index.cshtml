@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Martec.Domain.Models.CategoryModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+@if (Model != null)
+{
+
+
+    <h2>Index</h2>
+   
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                using (Html.BeginForm("Delete", "Category", new { Id = item.CategoryId }))
+                {
+                    <tr>
+
+                        <td>
+                            @Html.ActionLink(@item.CategoryName, "Index", "Product", new { Id = @item.CategoryId }, new { area = "Admin" })
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
+                            <input type="submit" value="Delete"
+                                   onclick="return confirm('Are you sure you want to delete @item.CategoryName record');" />
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+}

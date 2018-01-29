@@ -1,0 +1,5 @@
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Domain\bin\Debug\Martec.Domain.dll
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Domain\bin\Debug\Martec.Domain.pdb
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Domain\obj\Debug\Martec.Domain.csprojResolveAssemblyReference.cache
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Domain\obj\Debug\Martec.Domain.dll
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Domain\obj\Debug\Martec.Domain.pdb

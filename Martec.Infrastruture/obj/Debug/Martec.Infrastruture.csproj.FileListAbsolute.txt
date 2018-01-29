@@ -1,0 +1,15 @@
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\Martec.Infrastruture.dll.config
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\Martec.Infrastruture.dll
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\Martec.Infrastruture.pdb
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\EntityFramework.dll
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\Martec.Domain.dll
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\Martec.Domain.pdb
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\EntityFramework.xml
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\obj\Debug\Martec.Infrastruture.csprojResolveAssemblyReference.cache
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\obj\Debug\Martec.Infrastruture.dll
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\obj\Debug\Martec.Infrastruture.pdb
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\obj\Debug\Martec.Infrastruture.Migrations.InitialMigrations.resources
+C:\Users\igwe\Documents\Visual Studio 2015\Projects\Martec\Martec.Infrastruture\obj\Debug\Martec.Infrastruture.csproj.GenerateResource.Cache

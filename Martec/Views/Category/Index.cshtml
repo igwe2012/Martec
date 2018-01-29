@@ -1,0 +1,17 @@
+﻿@model IEnumerable<CategoryModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (Model != null)
+{
+    <div style="font-family:Arial">
+        <p>Categories of Product</p>
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("List","Product",new { Id = item.CategoryId})" class="w3-btn w3-block w3-teal">@item.CategoryName</a>
+            <br />
+        }
+    </div>
+}

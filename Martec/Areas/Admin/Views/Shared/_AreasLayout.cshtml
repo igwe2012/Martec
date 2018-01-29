@@ -1,0 +1,85 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Loading Bootstrap -->
+    <link href="~/Libs/Flat-UI-master/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="~/Libs/Flat-UI-master/dist/css/flat-ui.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="~/Libs/Flat-UI-master/img/favicon.ico">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Libs/W3School/W3.css" rel="stylesheet" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body style="background-color:#ecf0f1">
+
+
+
+    <div class="container-fluid body-content">
+
+        <div class="row demo-row">
+            <div class="col-xs-12">
+                <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                            <span class="sr-only">Toggle navigation</span>
+                        </button>
+                        <a class="navbar-brand" href="#"><i>Martec</i></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a href="@Url.Action("Index","Category",new { area = "Admin" })">Category</a></li>
+
+                            <li><a href="@Url.Action("Index","Order",new { area = "Admin" })">Order</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a href="@Url.Action("Logout","Account")">Logout</a></li>
+                            }
+
+
+                        </ul>
+                        <form class="navbar-form navbar-right" action="#" role="search">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn"><span class="fui-search"></span></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- /.navbar-collapse -->
+                </nav><!-- /navbar -->
+            </div>
+        </div>
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-warning alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>@TempData["Message"]
+            </div>
+        }
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="~/Libs/Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/Libs/Flat-UI-master/dist/js/vendor/video.js"></script>
+    <script src="~/Libs/Flat-UI-master/dist/js/flat-ui.min.js"></script>
+    @RenderSection("script", required: false)
+</body>
+</html>
